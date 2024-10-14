@@ -243,7 +243,6 @@
     sesotho: { word: "liphetoho", pos: "lebitso", definition: "Sehlopha kapa ntho e nang le tšekamelo ea ho fetoha.", example: "Liphuputso li akaretsa liphetoho tse ngata tse ka amang sephetho." }
 }
 };
-
         // Function to perform search based on URL parameter
         document.addEventListener("DOMContentLoaded", () => {
             const urlParams = new URLSearchParams(window.location.search);
@@ -269,7 +268,9 @@
                 const languages = ['english', 'isizulu', 'isixhosa', 'sepedi', 'sesotho'];
                 languages.forEach(lang => {
                     if (dictionary[searchInput][lang]) {
+                        const languageLabel = lang.toUpperCase().replace("ENGLISH", "ENGLISH");
                         const result = `
+                            <h3>${languageLabel}</h3>
                             <div class="grammar-section">
                                 <strong>${dictionary[searchInput][lang].word}</strong>
                                 <i class="fas fa-volume-up" style="cursor: pointer;" onclick="playAudio('${dictionary[searchInput][lang].audio}')"></i>
@@ -296,6 +297,7 @@
             const audio = new Audio(audioSrc);
             audio.play();
         }
+
     </script>
 
 </body>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UJ Multilingual Research Dictionary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #ff6600; /* UJ Orange */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar img {
+            height: 50px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .container {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+            flex-grow: 1;
+        }
+
+        .container h1 {
+            color: #ff6600;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin: 30px 0;
+        }
+
+        .search-bar input {
+            width: 60%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            padding: 12px 25px;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #e65c00;
+        }
+
+        .compilers {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container h1 {
+                font-size: 1.8rem;
+            }
+
+            .container p {
+                font-size: 1rem;
+            }
+
+            .search-bar input {
+                width: 90%;
+            }
+
+            .navbar a {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container h1 {
+                font-size: 1.5rem;
+            }
+
+            .navbar img {
+                height: 40px;
+            }
+
+            .search-bar input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .search-bar button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="https://www.uj.ac.za/wp-content/uploads/2021/09/university-of-johannesburg-logo.png" alt="UJ Logo">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>UJ Multilingual Research Dictionary</h1>
+        <p>English - IsiZulu - IsiXhosa - Sepedi - Sesotho</p>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for a word...">
+            <button onclick="performSearch()">Search</button>
+        </div>
+
+        <!-- Compilers -->
+        <div class="compilers">
+            Compilers: Prof Mazibuko
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2024 University of Johannesburg. All Rights Reserved.
+    </div>
+
+    <script>
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (searchTerm) {
+                // Redirect to searchResults.html with the search term as a query parameter
+                window.location.href = `searchResults.html?search=${encodeURIComponent(searchTerm)}`;
+            } else {
+                alert("Please enter a search term.");
+            }
+        }
+    </script>
+
+</body>
+</html>

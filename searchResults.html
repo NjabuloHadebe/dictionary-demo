@@ -254,49 +254,58 @@
             }
         });
 
-        // Function to display search results
-        function search(searchTerm = null) {
-            const searchInput = searchTerm || document.getElementById('searchInput').value.toLowerCase();
-            const resultsContainer = document.getElementById('resultsContainer');
-            const searchResultsTitle = document.getElementById('searchResultsTitle');
-            resultsContainer.innerHTML = ''; // Clear previous results
+// Function to display search results
+function search(searchTerm = null) {
+    const searchInput = searchTerm || document.getElementById('searchInput').value.toLowerCase();
+    const resultsContainer = document.getElementById('resultsContainer');
+    const searchResultsTitle = document.getElementById('searchResultsTitle');
+    resultsContainer.innerHTML = ''; // Clear previous results
 
-            if (dictionary[searchInput]) {
-                searchResultsTitle.innerHTML = `Search Results for "${searchInput}"`;
+    if (dictionary[searchInput]) {
+        searchResultsTitle.innerHTML = `Search Results for "${searchInput}"`;
 
-                // Display results for all languages
-                const languages = ['english', 'isizulu', 'isixhosa', 'sepedi', 'sesotho'];
-                languages.forEach(lang => {
-                    if (dictionary[searchInput][lang]) {
-                        const languageLabel = lang.toUpperCase().replace("ENGLISH", "ENGLISH");
-                        const result = `
-                            <h3>${languageLabel}</h3>
-                            <div class="grammar-section">
-                                <strong>${dictionary[searchInput][lang].word}</strong>
-                                <i class="fas fa-volume-up" style="cursor: pointer;" onclick="playAudio('${dictionary[searchInput][lang].audio}')"></i>
-                                <em>${dictionary[searchInput][lang].pos}</em>
-                            </div>
-                            <div class="definition-text">
-                                ${dictionary[searchInput][lang].definition}
-                            </div>
-                            <div class="example-text">
-                                Example: ${dictionary[searchInput][lang].example}
-                            </div>
-                            <div class="orange-line"></div>
-                        `;
-                        resultsContainer.innerHTML += result;
-                    }
-                });
-            } else {
-                searchResultsTitle.innerHTML = `No results found for "${searchInput}"`;
+        // Display results for all languages
+        const languageLabels = {
+            english: "ENGLISH",
+            isizulu: "ENGLISH-ISIZULU",
+            isixhosa: "ENGLISH-ISIXHOSA",
+            sepedi: "ENGLISH-SEPEDI",
+            sesotho: "ENGLISH-SESOTHO"
+        };
+        
+        const languages = ['english', 'isizulu', 'isixhosa', 'sepedi', 'sesotho'];
+        languages.forEach(lang => {
+            if (dictionary[searchInput][lang]) {
+                const languageLabel = languageLabels[lang];
+                const result = `
+                    <h3>${languageLabel}</h3>
+                    <div class="grammar-section">
+                        <strong>${dictionary[searchInput][lang].word}</strong>
+                        <i class="fas fa-volume-up" style="cursor: pointer;" onclick="playAudio('${dictionary[searchInput][lang].audio}')"></i>
+                        <em>${dictionary[searchInput][lang].pos}</em>
+                    </div>
+                    <div class="definition-text">
+                        ${dictionary[searchInput][lang].definition}
+                    </div>
+                    <div class="example-text">
+                        Example: ${dictionary[searchInput][lang].example}
+                    </div>
+                    <div class="orange-line"></div>
+                `;
+                resultsContainer.innerHTML += result;
             }
-        }
+        });
+    } else {
+        searchResultsTitle.innerHTML = `No results found for "${searchInput}"`;
+    }
+}
 
-        // Function to play audio
-        function playAudio(audioSrc) {
-            const audio = new Audio(audioSrc);
-            audio.play();
-        }
+// Function to play audio
+function playAudio(audioSrc) {
+    const audio = new Audio(audioSrc);
+    audio.play();
+}
+
 
     </script>
 

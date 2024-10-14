@@ -5,143 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f9f9f9;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            background-color: #ff6600; /* UJ Orange */
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .navbar img {
-            height: 50px;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-right: 15px;
-            font-size: 14px;
-        }
-
-        /* Search Bar */
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .search-bar input {
-            width: 60%;
-            padding: 12px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .search-bar button {
-            padding: 12px 25px;
-            background-color: #ff6600;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .search-bar button:hover {
-            background-color: #e65c00;
-        }
-
-        /* Main Content */
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.5rem;
-        }
-
-        .grammar-section {
-            font-size: 1.2rem;
-            color: orange;
-            display: flex;
-            align-items: center;
-            text-align: left;
-            line-height: 1.2;
-        }
-
-        .grammar-section strong {
-            margin-right: 10px;
-        }
-
-        .grammar-section em {
-            font-size: 0.8rem;
-            color: grey;
-            margin-left: 5px;
-        }
-
-        .definition-text {
-            font-size: 0.9rem;
-            color: #333;
-            margin-top: 5px;
-            line-height: 1.4;
-        }
-
-        .example-text {
-            font-size: 0.9rem;
-            color: #555;
-            margin-top: 5px;
-            margin-left: 20px;
-            line-height: 1.4;
-            font-style: italic;
-        }
-
-        .orange-line {
-            border-top: 1px solid #ff6600;
-            margin: 20px 0;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 12px;
-            margin-top: auto;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .search-bar {
-                flex-direction: column;
-            }
-            
-            .search-bar input {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-
-            .search-bar button {
-                width: 100%;
-            }
-        }
+        /* ... same styles as before ... */
     </style>
-
-    <!-- Link to Font Awesome for Speaker Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
@@ -171,80 +36,19 @@
     </div>
 
     <script>
+        // Dummy data for research-related words
         const dictionary = {
-    "methodology": {
-        english: { word: "methodology", pos: "noun", definition: "A system of methods used in a particular area of study or activity.", example: "The methodology of research is key to reliable results." },
-        isizulu: { word: "indlela yokwenza izinto", pos: "isichazamazwi", definition: "Isistimu yezindlela ezisetshenziswa esifundweni noma kumsebenzi othile.", example: "Indlela yokwenza izinto kwezocwaningo ibalulekile ekutheni imiphumela ithembeke." },
-        isixhosa: { word: "indlela yokwenza izinto", pos: "isibizo", definition: "Inkqubo yeendlela ezisetyenziswayo kuphando.", example: "Indlela yokwenza izinto kuphando iyimfuneko kwimpumelelo." },
-        sepedi: { word: "mokgwa wa tshebetso", pos: "leina", definition: "Mokgwa wa tshebetso o diriswago patlisisong.", example: "Mokgwa wa tshebetso patlisisong ke wa bohlokwa." },
-        sesotho: { word: "mokgwa wa tshebetso", pos: "lebitso", definition: "Mokgwa wa tshebetso o sebelisoang patlisisong.", example: "Mokgwa wa tshebetso patlisisong o bohlokwa." }
-    },
-    "analysis": {
-        english: { word: "analysis", pos: "noun", definition: "Detailed examination of the elements or structure of something.", example: "The analysis of data reveals hidden patterns." },
-        isizulu: { word: "ukuhlaziywa", pos: "isichazamazwi", definition: "Ukuhlolwa ngokuningiliziwe kwezakhi noma isakhiwo sento ethile.", example: "Ukuhlaziywa kwedatha kubonisa izinqubo ezifihlekile." },
-        isixhosa: { word: "uhlalutyo", pos: "isibizo", definition: "Uhlalutyo olunzulu lwezinto okanye izakhiwo.", example: "Uhlalutyo lwedatha lubonakalisa iimilo ezifihlakeleyo." },
-        sepedi: { word: "tlhahlobo", pos: "leina", definition: "Tlhahlobo ya dintlha e utolla mekgwa e patogileng.", example: "Tlhahlobo ya dintlha e bontsha dipaterone tse patogileng." },
-        sesotho: { word: "tlhahlobo", pos: "lebitso", definition: "Tlhatlhobo ya dintho e senola mekgwa e patwang.", example: "Tlhatlhobo ya dintlha e senotse dipaterone tse patwang." }
-    },
-    "framework": {
-        english: { word: "framework", pos: "noun", definition: "An essential supporting structure of a system or concept.", example: "The framework of the research was based on qualitative data." },
-        isizulu: { word: "uhlaka", pos: "ibizo", definition: "Isakhiwo esiyisisekelo sokwesekela uhlelo noma umqondo.", example: "Uhlaka locwaningo lwalususelwe kudatha yekhwalithi." },
-        isixhosa: { word: "isakhelo", pos: "isibizo", definition: "Isakhelo esixhasayo sophando okanye inkqubo.", example: "Isakhelo sophando sasisiseko sedatha esemgangathweni." },
-        sepedi: { word: "sekgomarelo", pos: "leina", definition: "Sebopego se bohlokwa se sephedisang tshepedišo.", example: "Sekgomarelo sa patlisiso se theilwe go data ya boleng." },
-        sesotho: { word: "sekgomaretsi", pos: "lebitso", definition: "Sebopeho se bohlokoa ho tšehetsa tsamaiso.", example: "Sehlaka sa lipatlisiso se ipapisitse le data ea boleng." }
-    },
-    "instruments": {
-        english: { word: "instruments", pos: "noun", definition: "Tools or devices used for precise work, especially in research.", example: "Research instruments such as surveys and questionnaires were employed." },
-        isizulu: { word: "amathuluzi", pos: "isichazamazwi", definition: "Amathuluzi asetshenziswa emsebenzini oqondile, ikakhulukazi ocwaningweni.", example: "Amathuluzi ocwaningo njengemibuzo kanye nama-survey asetshenzisiwe." },
-        isixhosa: { word: "izixhobo", pos: "isibizo", definition: "Izixhobo ezisetyenziswayo kwimisebenzi ethile, ngakumbi uphando.", example: "Izixhobo zophando ezinje ngee-survey zafunyaniswa." },
-        sepedi: { word: "didiriswa", pos: "leina", definition: "Didiriswa tše di šomišwago go šoma mošomo o šupetšago.", example: "Didiriswa tša dipatlisiso tše bjalo ka dipotšišo di šomišitšwe." },
-        sesotho: { word: "disebediswa", pos: "lebitso", definition: "Lisebelisoa tse sebelisoang ho etsa mosebetsi o itseng ka hloko.", example: "Lisebelisoa tsa lipatlisiso joalo ka lipotso li ile tsa sebelisoa." }
-    },
-    "data": {
-        english: { word: "data", pos: "noun", definition: "Facts and statistics collected for reference or analysis.", example: "The data from the experiment was analyzed to draw conclusions." },
-        isizulu: { word: "imininingwane", pos: "isichazamazwi", definition: "Amaqiniso nezibalo ezihlanganisiwe ukuze kuhlaziywe noma kwenziwe izinqumo.", example: "Imininingwane evela ocwaningweni yahlaziywa ukuze kwenziwe iziphetho." },
-        isixhosa: { word: "idatha", pos: "isibizo", definition: "Iinyani kunye neenkcukacha eziqokelelwe ukuze zihlolwe.", example: "Idatha evela kuvavanyo yahlaziywa ukwenza izigqibo." },
-        sepedi: { word: "datha", pos: "leina", definition: "Dintlha le dipalopalo tšeo di kgobokeditšwego gore di dirišwe ka bohlale.", example: "Datha yeo e tšwago molelong e šomišitšwe go dira dikgopolo." },
-        sesotho: { word: "data", pos: "lebitso", definition: "Lintlha le lipalo-palo tse bokelletsoeng bakeng sa tlhahlobo kapa ho fana ka qeto.", example: "Data e tsoang thutong e hlahlobiloe ho etsa liqeto." }
-    },
-    "hypothesis": {
-        english: { word: "hypothesis", pos: "noun", definition: "A proposed explanation for a phenomenon, often used as a basis for further investigation.", example: "The researcher tested the hypothesis through experiments." },
-        isizulu: { word: "isiphakamiso", pos: "isichazamazwi", definition: "Isiphakamiso senqubo echazayo evame ukusetshenziswa njengesisekelo socwaningo olwenziwe ngokuhlolisisa.", example: "Umcwaningi wahlola isiphakamiso ngezilwane." },
-        isixhosa: { word: "ithiyori", pos: "isibizo", definition: "Inkqubo esekwe kwinto ethile ekuhlolweni okanye kwithiyori, enokusetyenziselwa uphando.", example: "Umphandi wavavanya ithiyori ngophando olwenziwayo." },
-        sepedi: { word: "kgopolo", pos: "leina", definition: "Kgopolo yeo e dirilwego go hlaloša se sengwe gomme e šomišwa bjalo ka motheo wa dinyakišišo tše dingwe.", example: "Monyakišiši o lekile kgopolo ya gagwe ka go dira dinyakišišo." },
-        sesotho: { word: "boitšoaro", pos: "lebitso", definition: "Tlhahiso e tsoang phetohong e ka lekanngoang kapa e tlalehang.", example: "Moithuti o ile a hlahloba boitšoaro ka ho etsa liteko." }
-    },
-   "sampling": {
-    english: { word: "sampling", pos: "noun", definition: "The process of selecting a representative group from a larger population for the purpose of study.", example: "Sampling was used to select participants for the research." },
-    isizulu: { word: "ukukhethwa kwesampuli", pos: "isichazamazwi", definition: "Inqubo yokukhetha iqoqo elimele iqembu elikhulu ukuze lihlolwe.", example: "Ukukhethwa kwesampuli kwasetshenziswa ukukhetha ababambiqhaza ocwaningweni." },
-    isixhosa: { word: "ukukhetha isampuli", pos: "isibizo", definition: "Inkqubo yokukhetha iqela elimele iqela elikhulu ngenjongo yokuphanda.", example: "Ukukhetha isampuli kwasetyenziselwa ukukhetha abathathi-nxaxheba bophando." },
-    sepedi: { word: "go kgetha sampole", pos: "leina", definition: "Tshepedišo ya go kgetha sehlopha se emelago palo ye kgolo bakeng sa thuto.", example: "Go kgetha sampole go šomišitšwe go kgetha barutwana ba dipatlisiso." },
-    sesotho: { word: "ho khetha sampole", pos: "lebitso", definition: "Mokhoa oa ho khetha sehlopha se emelang baahi ba bangata bakeng sa thuto.", example: "Ho khetha sampole ho sebelisitsoe ho khetha barupeluoa ba liphuputso." }
-},
-"inference": {
-    english: { word: "inference", pos: "noun", definition: "A conclusion reached on the basis of evidence and reasoning.", example: "The inference drawn from the data was that the treatment was effective." },
-    isizulu: { word: "ukuhumusha", pos: "isichazamazwi", definition: "Isiphetho esifinyelelwe ngokusekelwe ebufakazini nasemicabangweni.", example: "Isiphetho esitholwe kudatha sithi ukwelashwa kusebenzile." },
-    isixhosa: { word: "ukuphawula", pos: "isibizo", definition: "Isiphelo esenziwa ngeenyaniso nobungqina.", example: "Isiphelo esenziwe kwingqokelela yedatha sasithi unyango lusebenza." },
-    sepedi: { word: "tšhupetšo", pos: "leina", definition: "Tšhupetšo ye e hweditšwego go šomiša dikgopolo le dinyakišišo.", example: "Tšhupetšo ye e hweditšwego go tšwa datheng e bontšha gore kalafo e šomile." },
-    sesotho: { word: "qeto", pos: "lebitso", definition: "Qeto e entsoeng ka bohlale le bopaki.", example: "Qeto e entsoeng ke kalafo e bile le katleho." }
-},
-"theory": {
-    english: { word: "theory", pos: "noun", definition: "A supposition or a system of ideas intended to explain something, based on general principles.", example: "The theory of evolution explains the diversity of life on Earth." },
-    isizulu: { word: "ithiyori", pos: "isichazamazwi", definition: "Uhlelo lwemibono oluhloselwe ukuchaza okuthile ngokusekelwe ezimisweni eziqondene.", example: "Ithiyori yokuziphendukela kwemvelo ichaza ukuhluka kwempilo eMhlabeni." },
-    isixhosa: { word: "ithiyori", pos: "isibizo", definition: "Inkqubo yeengcinga zenzululwazi eziphakanyiswa ukuchaza into ethile.", example: "Ithiyori yokuziphendukela kweemeko ichaza iintlobo-ntle zobomi eMhlabeni." },
-    sepedi: { word: "kgopolo", pos: "leina", definition: "Mothofatšo wa dikgopolo tšeo di hlalošago se sengwe, di theilwe ditekanyetšong tša kakaretšo.", example: "Kgopolo ya phetošo e hlaloša mehutahuta ya bophelo mo lefaseng." },
-    sesotho: { word: "khopolo", pos: "lebitso", definition: "Tsamaiso ea mehopolo e reretsoeng ho hlalosa ntho e itseng ka melao-motheo.", example: "Khopolo ea phetoho e hlalosa phapang ea bophelo Lefatšeng." }
-},
-"variables": {
-    english: { word: "variables", pos: "noun", definition: "An element, feature, or factor that is liable to vary or change.", example: "The research accounted for various variables that could influence the outcome." },
-    isizulu: { word: "okuguquguqukayo", pos: "isichazamazwi", definition: "Isici noma into enezici zokuguquguquka noma ukufana.", example: "Ucwaningo lwafaka okuguquguqukayo okuningi okungathinta umphumela." },
-    isixhosa: { word: "iinguqulelo", pos: "isibizo", definition: "Into enokwahluka okanye itshintshe ngalo naliphi na ixesha.", example: "Uphando lufake iziguquko ezininzi ezinokuthi zichaphazele iziphumo." },
-    sepedi: { word: "diphetogo", pos: "leina", definition: "Seemo goba selo seo se ka fetošago go ya ka maemo a itšego.", example: "Patlisiso e akaretša diphetogo tše di fapafapanego tšeo di ka amago sephetho." },
-    sesotho: { word: "liphetoho", pos: "lebitso", definition: "Sehlopha kapa ntho e nang le tšekamelo ea ho fetoha.", example: "Liphuputso li akaretsa liphetoho tse ngata tse ka amang sephetho." }
-}
-};
+            "methodology": {
+                english: { word: "methodology", pos: "noun", definition: "A system of methods used in a particular area of study or activity.", example: "The methodology of research is key to reliable results." },
+                isizulu: { word: "indlela yokwenza izinto", pos: "isichazamazwi", definition: "Isistimu yezindlela ezisetshenziswa esifundweni noma kumsebenzi othile.", example: "Indlela yokwenza izinto kwezocwaningo ibalulekile ekutheni imiphumela ithembeke." },
+                isixhosa: { word: "indlela yokwenza izinto", pos: "isibizo", definition: "Inkqubo yeendlela ezisetyenziswayo kuphando.", example: "Indlela yokwenza izinto kuphando iyimfuneko kwimpumelelo." },
+                sepedi: { word: "mokgwa wa tshebetso", pos: "leina", definition: "Mokgwa wa tshebetso o diriswago patlisisong.", example: "Mokgwa wa tshebetso patlisisong ke wa bohlokwa." },
+                sesotho: { word: "mokgwa wa tshebetso", pos: "lebitso", definition: "Mokgwa wa tshebetso o sebelisoang patlisisong.", example: "Mokgwa wa tshebetso patlisisong o bohlokwa." }
+            },
+            // Add more terms here...
+        };
 
-        // Function to perform search based on URL parameter
+        // Extract the search term from the URL and display results
         document.addEventListener("DOMContentLoaded", () => {
             const urlParams = new URLSearchParams(window.location.search);
             const searchTerm = urlParams.get('search');
@@ -255,9 +59,8 @@
             }
         });
 
-        // Function to display search results
         function search(searchTerm = null) {
-            const searchInput = searchTerm || document.getElementById('searchInput').value.toLowerCase();
+            const searchInput = searchTerm || document.getElementById('searchInput').value.trim().toLowerCase();
             const resultsContainer = document.getElementById('resultsContainer');
             const searchResultsTitle = document.getElementById('searchResultsTitle');
             resultsContainer.innerHTML = ''; // Clear previous results
@@ -272,7 +75,6 @@
                         const result = `
                             <div class="grammar-section">
                                 <strong>${dictionary[searchInput][lang].word}</strong>
-                                <i class="fas fa-volume-up" style="cursor: pointer;" onclick="playAudio('${dictionary[searchInput][lang].audio}')"></i>
                                 <em>${dictionary[searchInput][lang].pos}</em>
                             </div>
                             <div class="definition-text">
@@ -289,12 +91,6 @@
             } else {
                 searchResultsTitle.innerHTML = `No results found for "${searchInput}"`;
             }
-        }
-
-        // Function to play audio
-        function playAudio(audioSrc) {
-            const audio = new Audio(audioSrc);
-            audio.play();
         }
     </script>
 

@@ -174,12 +174,14 @@
     <div class="footer">
         © 2024 University of Johannesburg. All Rights Reserved.
     </div>
-
-   <script>
-        function searchFromLandingPage() {
-            const searchInput = document.getElementById('searchInput').value;
-            if (searchInput) {
-                window.location.href = `searchresults.html?search=${encodeURIComponent(searchInput)}`;
+    <script>
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (searchTerm) {
+                // Redirect to searchResults.html with the search term as a query parameter
+                window.location.href = `searchResults.html?search=${encodeURIComponent(searchTerm)}`;
+            } else {
+                alert("Please enter a search term.");
             }
         }
     </script>
